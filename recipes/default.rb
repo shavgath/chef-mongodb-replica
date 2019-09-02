@@ -37,6 +37,13 @@ template '/etc/mongod.conf' do
   group 'root'
 end
 
+template '/etc/hosts' do
+  source 'hosts.erb'
+  mode '0755'
+  owner 'root'
+  group 'root'
+end
+
 template '/etc/systemd/system/mongod.service' do
   source 'mongod.service.erb'
   mode '0600'
